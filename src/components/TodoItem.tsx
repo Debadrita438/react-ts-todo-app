@@ -1,5 +1,11 @@
-const TodoItem: React.FC<{ todo: string }> = (props) => {
-    return <li>{props.todo}</li>;
+import styles from './TodoItem.module.css';
+
+const TodoItem: React.FC<{ todo: string; onDelete: () => void }> = (props) => {
+    return (
+        <li className={styles.item} onClick={props.onDelete}>
+            {props.todo}
+        </li>
+    );
 };
 
 export default TodoItem;
